@@ -57,13 +57,13 @@ var item = "firstPocket";
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+// alert([backpack]);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-  //Code here
+// console.log(backPack);
 
 
 
@@ -240,8 +240,8 @@ function MakePerson(name, birthday, ssn) {
     name: name,
     birthday: birthday,
     ssn: ssn
-  }
-}
+  };
+};
 
 
 //NEXT PROBLEM
@@ -256,8 +256,8 @@ function MakeCard(name, cardNumber, expirationDate, fourDigitCode) {
     cardNumber: cardNumber,
     expirationDate: expirationDate,
     fourDigitCode: fourDigitCode
-  }
-}
+  };
+};
 
 
 
@@ -270,9 +270,13 @@ function MakeCard(name, cardNumber, expirationDate, fourDigitCode) {
    Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard.
 */
 
-// function bindCard(MakePerson, MakeCard) {
-//   return {
-//     MakePerson.merge(makeCard);
-//     }
-//   }
-// }
+function bindCard(person, card) {
+  var personCard = {};
+  for (var key in person) {
+    personCard[key] = person[key];
+  }
+  for (var key in card) {
+    personCard[key] = card[key];
+  }
+  return personCard;
+}
